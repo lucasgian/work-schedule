@@ -6,4 +6,12 @@ export class TaskUser {
         this.id = id;
         this.name = name;
     }
+
+    getName():string {
+        return this.name;
+    }
+
+    getId():number {
+        return this.id;
+    }
 }

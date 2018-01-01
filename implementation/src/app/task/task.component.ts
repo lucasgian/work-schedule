@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { TaskUser } from '../task-user';
 
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -12,6 +13,9 @@ export class TaskComponent {
   task = "";
   id = 0;
   add() {
-    this.tasks.push(this.task);
+    this.tasks.push(new TaskUser(this.id++, this.task));
+  }
+  remove(id:number) {
+    delete this.tasks[id];
   }
 }
