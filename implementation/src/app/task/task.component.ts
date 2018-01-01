@@ -11,11 +11,17 @@ import { TaskUser } from '../task-user';
 export class TaskComponent {
   tasks = [];
   task = "";
-  id = 0;
+  size = 0;
   add() {
-    this.tasks.push(new TaskUser(this.id++, this.task));
+    this.tasks.push(new TaskUser(this.size++, this.task));
   }
-  remove(id:number) {
-    delete this.tasks[id];
+  remove(index:number) {
+    var aux = [];
+    for(var i=0; i != this.size; i++)
+      if(this.tasks[i].id != index)
+        aux.push(this.tasks[i]);
+      
+    this.tasks = aux;
+    this.size--;
   }
 }

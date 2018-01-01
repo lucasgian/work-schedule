@@ -2,6 +2,6 @@
 <button type="button" (click)="add()">Send</button>
 <ul>
   <li *ngFor="let item of tasks">
-    {{item.getName()}}  <button type="button" (click)="{{'remove(' + item.getId() + ')' }}"></button> {{item.getId()}} Remove 
+    {{item.getName()}}  <button type="button" (click)="remove(item.getId())">Delete</button> {{item.getId()}}  
   </li>
 </ul>
