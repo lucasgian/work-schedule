@@ -15,17 +15,19 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TaskComponent } from './task/task.component';
 
 /* config this routes the app */
 const appRoutes:Routes = [
-  {path: 'home', component: AppComponent},
+  {path: 'task', component: TaskComponent},
   {path: '', component: AppComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
