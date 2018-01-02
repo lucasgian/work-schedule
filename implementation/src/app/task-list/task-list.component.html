@@ -1,9 +1,29 @@
-<ul>
-  <li *ngFor="let item of tasks">
-    {{item.getName()}}
-    <button type="button" (click)="remove(item.getId())">Delete</button>
-    {{item.getId()}}
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Options</th>
+      <!--
+      <th>Time</th>
+      <th>Priority</th>
+      -->
+    </tr>
+  </thead>
 
-    <button [routerLink]="['../edit', item.getId()]">Edit</button>
-  </li>
-</ul>
+  <tbody>
+    <tr *ngFor="let item of tasks">
+      <td>{{item.getId()}}</td>
+      <td>
+        {{item.getName()}}
+      </td>
+      <td>
+        <button class="btn waves-effect waves-light red" type="button" (click)="remove(item.getId())">Delete</button>
+        
+
+        <button class="btn waves-effect waves-light green" [routerLink]="['../edit', item.getId()]">Edit</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
