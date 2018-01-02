@@ -11,8 +11,8 @@ export class TaskService {
 
 
   /* method, the task addition */
-  add(task:string) {
-    this.tasks.push(new TaskUser(this.size++, task));
+  add(name_task:string, date_task:string, prio_task) {
+    this.tasks.push(new TaskUser(this.size++, name_task, date_task, prio_task));
   }
 
   /* method, the task remove */
@@ -26,7 +26,7 @@ export class TaskService {
   }
 
   /* method, the task edit */
-  edit(index: number, task: string) {
-    this.tasks[index] = new TaskUser(index, task);
+  edit(index: number, name_task:string, date_task:string, prio_task) {
+    this.tasks[index] = new TaskUser(index, name_task, date_task, prio_task);
   }
 }

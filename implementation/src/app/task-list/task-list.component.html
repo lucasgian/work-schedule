@@ -3,6 +3,8 @@
     <tr>
       <th>Id</th>
       <th>Name</th>
+      <th>Date of end</th>
+      <th>Priority</th>
       <th>Options</th>
       <!--
       <th>Time</th>
@@ -18,9 +20,13 @@
         {{item.getName()}}
       </td>
       <td>
+        {{item.getDate()}}
+      </td>
+      <td>
+        {{item.getPrio()}}
+      </td>
+      <td>
         <button class="btn waves-effect waves-light red" type="button" (click)="remove(item.getId())">Delete</button>
-        
-
         <button class="btn waves-effect waves-light green" [routerLink]="['../edit', item.getId()]">Edit</button>
       </td>
 

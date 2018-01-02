@@ -12,7 +12,9 @@ export class TaskEditComponent implements OnInit {
 
   id: number;
   tasks: Array<TaskUser>;
-  task: string = "";
+  name_task: string = "";
+  date_task: string = "";
+  prio_task: string = "";
 
   constructor(private router: ActivatedRoute, private taskService: TaskService) {
     this.id = this.router.snapshot.params['id'];
@@ -20,7 +22,7 @@ export class TaskEditComponent implements OnInit {
   }
 
   edit() {
-    this.taskService.edit(this.id, this.task);
+    this.taskService.edit(this.id, this.name_task, this.date_task, this.prio_task);
   }
   ngOnInit() {
 
