@@ -1,11 +1,4 @@
 <input type="text" [(ngModel)]="task" autofocus>
 <button type="button" (click)="add()">Send</button>
-<ul>
-  <li *ngFor="let item of tasks">
-    {{item.getName()}}
-    <button type="button" (click)="remove(item.getId())">Delete</button>
-    {{item.getId()}}
-   
-    <button routerLink='../edit'>Edit</button>
-  </li>
-</ul>
+
+<task-list></task-list>

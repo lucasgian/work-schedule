@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 import { TaskUser } from '../task-user';
-
+import { TaskService } from "../task.service";
 
 @Component({
   selector: 'app-task',
@@ -22,28 +22,15 @@ export class TaskComponent implements OnInit {
   ngOnInit() { this.thenBlock = this.primaryBlock; }
 
 
-
-  tasks:Array<TaskUser> = [];
+  tasks:Array<TaskUser>;  
   task:string = "";
-  size:number = 0;
-  /* method, the task addition */
+ 
+
+  constructor(private taskService:TaskService) {
+    this.tasks = this.taskService.tasks;
+  }
+
   add() {
-    this.tasks.push(new TaskUser(this.size++, this.task));
-  }
-
-  /* method, the task remove */
-  remove(index:number) {
-    var aux = [];
-    for(var i=0; i != this.size; i++)
-      if(this.tasks[i].getId() != index)
-        aux.push(this.tasks[i]);
-      
-    this.tasks = aux;
-    this.size--;
-  }
-
-  /* method, the task edit */
-  edit(index:number) {
-    
+    this.taskService.add(this.task);
   }
 }
