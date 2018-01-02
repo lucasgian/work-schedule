@@ -26,7 +26,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 /* config this routes the app */
 const appRoutes:Routes = [
   {path: 'task', component: TaskComponent},
-  {path: 'edit', component: TaskEditComponent},
+  {path: 'edit/:id', component: TaskEditComponent},
   {path: '', component: AppComponent}
 ];
 

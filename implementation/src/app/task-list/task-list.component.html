@@ -4,6 +4,6 @@
     <button type="button" (click)="remove(item.getId())">Delete</button>
     {{item.getId()}}
 
-    <button routerLink='../edit'>Edit</button>
+    <button [routerLink]="['../edit', item.getId()]">Edit</button>
   </li>
 </ul>

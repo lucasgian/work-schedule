@@ -9,6 +9,25 @@ import { TaskService } from "../task.service";
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
+
+  ngOnInit() { }
+
+
+  tasks: Array<TaskUser>;
+  task: string = "";
+
+
+  constructor(private taskService: TaskService) {
+    this.tasks = this.taskService.tasks;
+  }
+
+  add() {
+    this.taskService.add(this.task);
+  }
+}
+
+
+/*
   thenBlock: TemplateRef<any>|null = null;
   show: boolean = true;
  
@@ -21,16 +40,4 @@ export class TaskComponent implements OnInit {
  
   ngOnInit() { this.thenBlock = this.primaryBlock; }
 
-
-  tasks:Array<TaskUser>;  
-  task:string = "";
- 
-
-  constructor(private taskService:TaskService) {
-    this.tasks = this.taskService.tasks;
-  }
-
-  add() {
-    this.taskService.add(this.task);
-  }
-}
+*/
