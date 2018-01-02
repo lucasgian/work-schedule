@@ -12,17 +12,15 @@ export class TaskEditComponent implements OnInit {
 
   id: number;
   tasks: Array<TaskUser>;
-  task: TaskUser;
-  newTask:string = "";
+  task: string = "";
 
   constructor(private router: ActivatedRoute, private taskService: TaskService) {
-    this.id = parseInt(this.router.snapshot.params['id'], 10);
+    this.id = this.router.snapshot.params['id'];
     this.tasks = this.taskService.tasks;
-    this.task = this.tasks[this.id];
   }
 
-  add(index: number) {
-    this.tasks[index] = new TaskUser(index, this.newTask);
+  edit() {
+    this.taskService.edit(this.id, this.task);
   }
   ngOnInit() {
 

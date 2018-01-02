@@ -9,25 +9,26 @@ import { TaskService } from "./task.service";
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
 
-/* import components */
-import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { TaskComponent } from './task/task.component';
-import { TaskEditComponent } from './task-edit/task-edit.component';
-
 /* import firebase e config */
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+/* import components */
+import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TaskComponent } from './task/task.component';
+import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 /* config this routes the app */
 const appRoutes:Routes = [
   {path: 'task', component: TaskComponent},
   {path: 'edit/:id', component: TaskEditComponent},
-  {path: '', component: AppComponent}
+  {path: '', component: MenuComponent}
 ];
 
 @NgModule({
@@ -36,7 +37,8 @@ const appRoutes:Routes = [
     NavBarComponent,
     TaskComponent,
     TaskEditComponent,
-    TaskListComponent
+    TaskListComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

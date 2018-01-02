@@ -26,7 +26,7 @@ export class TaskService {
   }
 
   /* method, the task edit */
-  edit(index: number) {
-
+  edit(index: number, task: string) {
+    this.tasks[index] = new TaskUser(index, task);
   }
 }
